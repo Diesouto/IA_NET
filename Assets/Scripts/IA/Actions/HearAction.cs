@@ -1,9 +1,9 @@
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "(A) HearAction", menuName = "ScriptableObjects/Actions/HearAction")]
-public class HearAction : Action
+public class HearAction : DrawableAction
 {
-    [SerializeField] private float radius = 10f;
+    [SerializeField] private float radius;
 
     public override bool Check(GameObject owner)
     {
@@ -15,5 +15,11 @@ public class HearAction : Action
         }
 
         return false;
+    }
+
+    public override void DrawGizmo(GameObject owner)
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(owner.transform.position, radius);
     }
 }

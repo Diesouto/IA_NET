@@ -24,4 +24,16 @@ public class StateMachine : MonoBehaviour
             currentState = nextState;
         }
     }
+
+    private void OnDrawGizmos()
+    {
+        if(currentState)
+        {
+            currentState.DrawAllGizmos(gameObject);
+        }
+        else if (initialState)
+        {
+            initialState.DrawAllGizmos(gameObject);
+        }
+    }
 }

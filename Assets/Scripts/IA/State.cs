@@ -4,8 +4,10 @@ public class State : ScriptableObject
 {
     [Tooltip("Acción que se ha de cumplir para cambiar de estado")]
     [SerializeField] private Action actionToCheck;
+
     [Tooltip("Valor que tiene que devolver la acción")]
     [SerializeField] private bool actionValue;
+
     [Tooltip("Próximo estado a ejecutar")]
     [SerializeField] private State nextState;
 
@@ -16,5 +18,14 @@ public class State : ScriptableObject
         }
 
         return this;
+    }
+
+    public void DrawAllGizmos(GameObject owner) {
+        DrawableAction drawableAction = (DrawableAction) actionToCheck;
+
+        if(drawableAction)
+        {
+            drawableAction.DrawGizmo(owner);
+        }
     }
 }

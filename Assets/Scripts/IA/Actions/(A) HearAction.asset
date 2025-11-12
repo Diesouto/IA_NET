@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 225fbe5e6e1a1b54989fcac919d8cc1e, type: 3}
   m_Name: (A) HearAction
   m_EditorClassIdentifier: Assembly-CSharp::HearAction
-  radius: 5
+  radius: 2
